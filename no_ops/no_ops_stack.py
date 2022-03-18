@@ -1,3 +1,4 @@
+''' module for managing the no-ops.nl platform  '''
 from aws_cdk import (
     # Duration,
     Stack,
@@ -5,7 +6,9 @@ from aws_cdk import (
 )
 from constructs import Construct
 
+
 class NoOpsStack(Stack):
+    ''' resource definitions for the main stack '''
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
