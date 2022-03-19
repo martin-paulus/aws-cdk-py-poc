@@ -19,11 +19,13 @@ class NoOpsStack(Stack):
         ''' provision static web resources  '''
         bucket = s3.Bucket(
             self, 'no-ops_portal',
-            access_control=s3.BucketAccessControl.AUTHENTICATED_READ,
+            access_control=s3.BucketAccessControl.BUCKET_OWNER_FULL_CONTROL,
             block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
             bucket_name='no-ops-portal',
             encryption=s3.BucketEncryption.S3_MANAGED,
-            enforce_ssl=True, public_read_access=False
+            # cannot define this because CdnStack needs to manage bucket policy
+            # enforce_ssl=True,
+            public_read_access=False
         )
         return bucket
 
