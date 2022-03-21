@@ -1,0 +1,10 @@
+# [security] do not expose details of our infra
+cdk.context.json
+
+# cache paths
+cdk.out/**
+*.pyc
+**/__pycache__/
+
+# python virtual environment
+.venv/**
